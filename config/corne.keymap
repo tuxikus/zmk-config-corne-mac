@@ -16,26 +16,28 @@
 #define OS_WM 5
 
 / {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "default";
-
-            // -----------------------------------------------------------------------------------------------------------------------------
-            // |      |  '      |  ,        |  .        |  P       |  Y        |   |  F  |  G       |  C        |  R       |  L     |      |
-            // |      | LGUI A  |  LALT O   |  E LCTRL  |  U LT2   |  I        |   |  D  |  H LT1   |  LCTRL T  |  LALT N  | LGUI S |      |
-            // |      |  TAB    |  Q        |  J        |  K LT3   |  X        |   |  B  |  M       |  W        |  V       |  Z     |      |
-            //                              | ESC LT4   | SPC LT5  | OSM SHIFT |   | OSM SHIFT | RET  LT5 | BSPC LT4       |
-
             bindings = <
-&none  &kp SQT     &kp COMMA   &kp DOT      &kp P        &kp Y         &kp F       &kp G      &kp C        &kp R       &kp L       &none
-&none  &mt LGUI A  &mt LALT O  &mt LCTRL E  &lt 2 U      &kp I         &kp D       &lt 1 H    &mt LCTRL T  &mt LALT N  &mt LGUI S  &none
+&none  &kp SQT     &kp COMMA   &kp DOT      &kp P        &kp Y         &kp F       &kp G      &kp C        &kp R       &kp L         &none
+&none  &hm LGUI A  &hm LALT O  &hm LCTRL E  &lt 2 U      &kp I         &kp D       &lt 1 H    &hm LCTRL T  &hm LALT N  &hm LGUI S    &none
 &none  &kp TAB     &kp Q       &kp J        &lt 3 K        &kp X         &kp B       &kp M      &kp W        &kp V       &kp Z       &none
                                &lt 4 ESC    &lt 5 SPACE  &sk LSHIFT    &sk LSHIFT  &lt 5 RET  &lt 4 BSPC
             >;
         };
-
         left_sym_layer {
             display-name = "lSym";
             bindings = <
@@ -55,38 +57,31 @@
                      &none  &none  &none    &none     &none       &none
             >;
         };
-
         num_layer {
+            label = "num";
             bindings = <
 &none  &none  &none  &none  &none  &none    &none  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none  &none
 &none  &none  &none  &none  &none  &none    &none  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none  &none
 &none  &none  &none  &none  &none  &none    &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none  &none
                      &none  &none  &none    &none  &none         &kp N0
             >;
-
-            label = "num";
         };
-
         move_layer {
+            label = "move";
             bindings = <
 &none  &none  &none  &none  &none  &none    &none  &none     &kp UP_ARROW    &none            &none  &none
 &none  &none  &none  &none  &none  &none    &none  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &none
 &none  &none  &none  &none  &none  &none    &none  &none     &none           &none            &none  &none
                      &none  &none  &none    &none  &none     &none
             >;
-
-            label = "move";
         };
-
         os_wm_layer {
+            label = "os_wm";
             bindings = <
 &bt BT_SEL 0  &none             &kp LA(N4)        &kp LA(N5)        &kp LA(N6)  &kp LA(Y)    &kp LA(F)  &none      &none      &none  &kp LA(L)  &bt BT_SEL 3
 &bt BT_SEL 1  &kp LA(NUMBER_0)  &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(N3)  &none        &kp LA(D)  &kp LA(H)  &kp LA(T)  &none  &none      &bt BT_SEL 4
 &bt BT_SEL 2  &none             &none             &none             &none       &none        &none      &none      &none      &none  &none      &bt BT_CLR_ALL
-                                                  &none             &none       &none        &none      &none      &none
             >;
-
-            label = "os_wm";
         };
     };
 };
