@@ -47,30 +47,20 @@
         default_layer {
             display-name = "default";
             bindings = <
-&none  &kp SQT     &kp COMMA   &kp DOT      &kp P        &kp Y         &kp F       &kp G      &kp C        &kp R       &kp L       &none
-&none  &hm LGUI A  &hm LALT O  &hm LCTRL E  &lt 2 U      &kp I         &kp D       &lt 1 H    &hm LCTRL T  &hm LALT N  &hm LGUI S  &none
-&none  &kp TAB     &kp Q       &kp J        &lt 3 K      &kp X         &kp B       &kp M      &kp W        &kp V       &kp Z       &none
-                               &lt 4 ESC    &lt 5 SPACE  &sk LSHIFT    &sk LSHIFT  &lt 5 RET  &lt 4 BSPC
+&none  &kp SQT  &kp COMMA       &kp DOT         &kp P        &kp Y         &kp F       &kp G        &kp C           &kp R           &kp L  &none
+&none  &lt 2 A  &hm LEFT_GUI O  &hm LEFT_ALT E  &hm LCTRL U  &kp I         &kp D       &hm LCTRL H  &hm LEFT_ALT T  &hm LEFT_GUI N  &kp S  &none
+&none  &kp TAB  &kp Q           &kp J           &lt 2 K      &kp X         &kp B       &kp M        &kp W           &kp V           &kp Z  &none
+                                &lt 1 ESC       &lt 3 SPACE  &sk LSHIFT    &sk LSHIFT  &lt 3 RET    &lt 1 BSPC
             >;
         };
 
-        left_sym_layer {
+        sym {
             display-name = "lSym";
             bindings = <
-&none  &kp QUESTION   &kp EXCL  &kp LEFT_BRACKET      &kp PIPE   &kp RIGHT_BRACKET        &none  &none  &none  &none  &none  &none
-&none  &kp BACKSLASH  &kp HASH  &kp LEFT_PARENTHESIS  &kp SLASH  &kp RIGHT_PARENTHESIS    &none  &none  &none  &none  &none  &none
-&none  &kp GRAVE      &kp AT    &kp LEFT_BRACE        &kp TILDE  &kp RIGHT_BRACE          &none  &none  &none  &none  &none  &none
-                                &none                 &none      &none                    &none  &none  &none
-            >;
-        };
-
-        right_sym_layer {
-            display-name = "rSym";
-            bindings = <
-&none  &none  &none  &none  &none  &none    &none     &kp DOLLAR  &kp PERCENT  &kp AMPS   &none      &none
-&none  &none  &none  &none  &none  &none    &kp PLUS  &kp MINUS   &kp UNDER    &kp ASTRK  &kp EQUAL  &none
-&none  &none  &none  &none  &none  &none    &none     &kp SEMI    &kp COLON    &none      &kp CARET  &none
-                     &none  &none  &none    &none     &none       &none
+&none  &kp QUESTION   &kp EXCL  &kp LEFT_BRACKET      &kp PIPE   &kp RIGHT_BRACKET        &none     &kp DOLLAR     &kp PERCENT   &kp AMPERSAND  &none      &none
+&none  &kp BACKSLASH  &kp HASH  &kp LEFT_PARENTHESIS  &kp SLASH  &kp RIGHT_PARENTHESIS    &kp PLUS  &kp MINUS      &kp ASTERISK  &kp EQUAL      &none      &none
+&none  &kp GRAVE      &kp AT    &kp LEFT_BRACE        &kp TILDE  &kp RIGHT_BRACE          &none     &kp SEMICOLON  &kp COLON     &kp UNDER      &kp CARET  &none
+                                &none                 &none      &none                    &none     &none          &none
             >;
         };
 
@@ -87,19 +77,10 @@
         move_layer {
             label = "move";
             bindings = <
-&none  &none  &none  &none  &none  &none    &none  &none     &kp UP_ARROW    &none            &none  &none
-&none  &none  &none  &none  &none  &none    &none  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none     &none           &none            &none  &none
-                     &none  &none  &none    &none  &none     &none
-            >;
-        };
-
-        os_wm_layer {
-            label = "os_wm";
-            bindings = <
-&bt BT_SEL 0  &none  &kp LG(N4)        &kp LG(N5)        &kp LG(N6)  &none    &kp LG(F)      &none         &kp LG(UP_ARROW)    &none          &none  &bt BT_SEL 3
-&bt BT_SEL 1  &none  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(N3)  &none    &kp LG(SPACE)  &kp LG(LEFT)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT)  &none  &bt BT_SEL 4
-&bt BT_SEL 2  &none  &kp LG(Q)         &none             &none       &none    &none          &none         &none               &none          &none  &bt BT_CLR_ALL
+&bt BT_SEL 1  &none  &none  &none  &none  &none    &none  &none     &kp UP_ARROW    &none            &none  &bt BT_SEL 4
+&bt BT_SEL 2  &none  &none  &none  &none  &none    &none  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &none
+&bt BT_SEL 3  &none  &none  &none  &none  &none    &none  &none     &none           &none            &none  &bt BT_CLR_ALL
+                            &none  &none  &none    &none  &none     &none
             >;
         };
     };
